@@ -288,7 +288,18 @@ export interface IDiagnosticInfo {
 	notificationsEnabled: boolean;
 	disableProductionWebhooksOnMainProcess: boolean;
 	basicAuthActive: boolean;
-	systemInfo: IDataObject;
+	systemInfo: {
+		os: {
+			type?: string;
+			version?: string;
+		};
+		memory?: number;
+		cpus: {
+			count?: number;
+			model?: string;
+			speed?: number;
+		};
+	};
 	executionVariables: {
 		[key: string]: string | number | undefined;
 	};
