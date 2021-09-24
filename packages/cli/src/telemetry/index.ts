@@ -96,7 +96,10 @@ export class Telemetry {
 			await this.client.identify({
 				userId: this.instanceId,
 				anonymousId: '000000000000',
-				traits,
+				traits: {
+					...traits,
+					instanceId: this.instanceId,
+				},
 			});
 		}
 	}
